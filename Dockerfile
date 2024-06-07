@@ -1,5 +1,5 @@
 # use lower python versions
-FROM python:3.8
+FROM python:3.8-slim-bullseye
 
 WORKDIR /app
 
