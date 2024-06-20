@@ -42,3 +42,13 @@ Move into the directory
     cd ml-api-travel
 
 Containerize the application as follows
+
+    docker build -t `region`-docker.pkg.dev/`project`/`artifact_registry_repo`/`image_name`:`tag` .
+
+Make sure that you've created a repository in artifact registry inside the google cloud project that you can use to store the docker images.
+
+Afterwards, push the image to artifact registry with
+
+docker push `region`-docker.pkg.dev/`project`/`artifact_registry_repo`/`image_name`:`tag`
+
+If everything is successful, you should be able to deploy the ML API to Cloud Run. Assign at least 1GB of RAM to the instance so it runs smoothly.
