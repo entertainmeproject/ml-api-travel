@@ -6,7 +6,7 @@ This is a repository containing the deployment of the machine learning model use
 You can provide a `.env` file to set an API key for the model. Just provide an `API_KEY` environmental variable and the API will automatically use it to validate incoming requests.
 All requests is validated through a `key` query param in the url like so [https://modelapiurlhere.com?key=this+api+key](https://modelapiurlhere.com?key=this+api+key)
 
-If no `API_KEY` environmental variable is provided, the server will launch without validating requests.
+> If no `API_KEY` environmental variable is provided, the server will launch without validating requests.
 
 
 ## Local Installation
@@ -41,11 +41,12 @@ Move into the directory
 
     cd ml-api-travel
 
-Containerize the application as follows. Replace anything fully capitalized and preceded with a `$` sign with the appropriate names
+Containerize the application as follows. 
+> Replace anything fully capitalized and preceded with a `$` sign with the appropriate names
 
     docker build -t $REGION-docker.pkg.dev/$GCP_PROJECT/$ARTIFACT_REGISTRY_REPO/$IMAGE:$TAG .
 
-Make sure that you've created a repository in artifact registry inside the google cloud project that you can use to store the docker images.
+> Make sure that you've created a repository in artifact registry inside the google cloud project that you can use to store the docker images.
 
 Afterwards, push the image to artifact registry with
 
